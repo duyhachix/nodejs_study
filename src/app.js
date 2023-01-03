@@ -5,7 +5,7 @@ const path = require('path');
 const serveStatic = require('serve-static');
 
 const app = express(); // return app instance when call function express()
-const port = 3030;
+const port = 3040;
 
 // HTTP logger
 app.use(morgan('combined'));
@@ -15,6 +15,9 @@ app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, './resources/views'));
 // app.use(serveStatic(path.join(__dirname, './resources/views')))
+
+// dang ki dir cho static file
+app.use(express.static(__dirname + '/public'));
 
 // route
 app.get('/', (req, res) => {
