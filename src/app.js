@@ -29,7 +29,14 @@ app.get('/news', (req, res) => {
 	res.render('news');
 });
 
+// search page
+app.get('/search', (req, res) => {
+	console.log(req.query.q);
+	console.log(req.query.ref);
+	console.log(req.query.author);
+	res.render('search');
+});
+
 app.listen(port, () => {
 	console.log(`Example app listening on port http://localhost:${port}`);
 });
-
