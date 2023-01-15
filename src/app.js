@@ -7,6 +7,10 @@ const serveStatic = require('serve-static');
 const app = express(); // return app instance when call function express()
 const port = 3040;
 
+// middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // HTTP logger
 app.use(morgan('combined'));
 
@@ -35,7 +39,13 @@ app.get('/search', (req, res) => {
 	console.log(req.query.q);
 	console.log(req.query.ref);
 	console.log(req.query.author);
+	console.log(123);
 	res.render('search');
+});
+
+app.post('/search', (req, res) => {
+	console.log(req.body);
+	res.send('');
 });
 
 app.listen(port, () => {

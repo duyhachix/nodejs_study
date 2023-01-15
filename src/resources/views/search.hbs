@@ -1,9 +1,7 @@
 <div class='mt-10'>
-	<form method='GET' action="/news">
+	<form method='POST' action=''>
 		<div class='form-group'>
 			<label for='search'>Look for something ??</label>
-			<input type='text' name='fullname' />
-			<input type='text' name='age' />
 			<input
 				name='q'
 				type='text'
@@ -12,6 +10,16 @@
 				aria-describedby='emailHelp'
 				placeholder='Nhap tu khoa ...'
 			/>
+		</div>
+		 {{!-- select example --}}
+		<div class='form-group'>
+			<title>Search key</title>
+			<select name='gender' class='form-control' id='gender-input'>
+				<option value=''>Choose gender</option>
+				<option value='male'>Male</option>
+				<option value='female'>Female</option>
+
+			</select>
 		</div>
 
 		<button type='submit' class='btn btn-success'>Search</button>
